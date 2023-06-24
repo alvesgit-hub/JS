@@ -21,15 +21,16 @@
 <body>
     <h1>Olá Mundo!</h1>
 
-    <p>Já me livrei da maldição</p>
+    <p>Já me livrei da maldição</p> <!--comentário em HTML-->
 
     <script>
-        window.alert("Minha primeira mensagem em JS") /*Mandando um alerta*/
-        confirm("Está gostando de JS?") /*Alerta de confirmação - Ok e Cancelar*/
-        prompt("Qual é oseu nome?") /*Manda o usuário colocar o nome.*/
-        /*OBS:  no JavaScript não é necessario ;  e posso também tirar o nome window. */
+        
+        var n1 = Number(prompt("Digite um número: ")) // prompt retorna como string
+        var n2 = Number(prompt("Digite outro número: ")) //Number.parseInt() converte strting ou Number(n)
+        var s = n1 + n2
 
-        //usando para comentar em uma linha!
+        alert("A soma dos numéro entre ${n1}: " + s)
+
     </script>
      
 </body>
