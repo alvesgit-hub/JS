@@ -18,7 +18,7 @@ header{
 }
 section{
     width: 500px;
-    height: 500px;
+    height: 400px;
     margin: auto;
     background-color: white;
     border-radius: 10px;
@@ -26,6 +26,10 @@ section{
     box-shadow: 3px 3px 10px  rgba(0, 0, 0, 0.315);
     
 
+}
+
+div{
+padding-top: 20px;
 }
 footer{
     color: white;
