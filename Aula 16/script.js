@@ -1,13 +1,13 @@
-let num = document.getElementById(`input#fnum`)
-let list = document.getElementById(`select#lista`)
-let res = document.getElementById(`div#res`)
+let num = document.querySelector(`input#fnum`)
+let lista = document.querySelector(`select#flista`)
+let res = document.querySelector(`div#res`)
 let valores = []
 
-function isNumero(n){
-    if(Number(n)>=1 ** Number(n)<=100){
+function isNumero(n) {
+    if(Number(n) >=1 && Number(n)<=100) {
         return true
 
-    }else{
+    }else {
         return false 
     }
 
@@ -16,7 +16,7 @@ function isNumero(n){
 function inLista(n,l){
     if(l.indexOf(Number(n)) != -1){
         return true
-    }else{
+    }else {
         return false 
     }
 }
@@ -24,10 +24,26 @@ function inLista(n,l){
 
 
 function adicionar(){
-    if(isNumero(num.value) && !inLista(num.value)){
+    if(isNumero(num.value) && !inLista(num.value, valores)){
+        valores.push(Number(num.value))
+        let item = document.createElement(`option`)
+        item.text = `Valor ${num.value} adicionado`
+        lista.appendChild(item)
+        res.innerHTML = ``
 
     }else{
         alert(`Valor inválido ou já encontrado na lista.`)
     }
+    num.value = `` // esvaziar 
+    num.focus() //ja limpou e deu a opção de colocar numero
+}
 
+function finalizar (){
+    if(valores.length == 0){
+        alert(`Adicione valores antes de finalizar`)
+    }else{
+        let tot = valores.length
+        res.innerHTML= ``
+        res.innerHTML += `<p>Ao todo, temos ${tot} números cadastrados.<p>`
+    }
 }
